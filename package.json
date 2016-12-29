@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack --env.dev",
     "watch": "webpack --env.dev -w",
-    "start": "webpack-dev-server --env.devServer --env.dev",
+    "start": "webpack-dev-server --env.devServer --env.dev --host 0.0.0.0 ",
     "esLint": "webpack --env.esLint"
   },
   "author": "",
@@ -36,6 +36,7 @@
     "raw-loader": "^0.5.1",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
+    "touches": "^1.2.0",
     "webpack": "2.1.0-beta.25",
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "2.1.0-beta.10"

@@ -3,11 +3,12 @@ import { tree, octAngle, rAngle, cubeSize } from './index';
 
 let globalScale = scaleLinear().domain([1,0]).range([0,2]);
 
-window.addEventListener('mousemove', (e) => {
-    let tilt = ((e.pageX / window.innerWidth) -.5) * 4;
-    let scale = (e.pageY / window.innerHeight);
-    mutate(tilt, scale);
-});
+require('touches')()
+  .on('move', (e) => {
+      let tilt = ((e.pageX / window.innerWidth) -.5) * 4;
+      let scale = (e.pageY / window.innerHeight);
+      mutate(tilt, scale);
+  });
 
 function mutate(tiltDelta, scaleDelta) {
 
