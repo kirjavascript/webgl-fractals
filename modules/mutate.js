@@ -38,7 +38,7 @@ function mutate(tiltDelta, scaleDelta) {
             // console.log(dx);
 
             let calcX = (-.5 - dx) * gScale;
-            let calcY = (-1 + dy) * gScale;
+            let calcY = (-1 + dy) * (gScale);
 
             left.cube.position = new PIXI.Point(
                 (calcX*cubeSize)+((cubeSize/2)),
@@ -55,7 +55,7 @@ function mutate(tiltDelta, scaleDelta) {
             right.cube.scale = new PIXI.Point(scale, scale);
             right.cube.rotation = rotation;
 
-            let { dx, dy } = dxdy(angle);
+            let { dx, dy } = dxdy(angle, gScale);
 
             let calcX = (.5 + dx) * gScale;
             let calcY = (-1 + dy) * gScale;
@@ -85,7 +85,7 @@ function dxdy(angle, gScale = 1) {
 
     let dxHyp = Math.cos(rAngle-angle) * (Math.cos(angle)); // dx of hyp
 
-    let dy = Math.cos(angle-octAngle) * (((0.5)-dxHyp) + dx);
+    let dy = Math.cos(angle-octAngle) * (((0.5 * gScale)-dxHyp) + dx);
 
     return { dx, dy };
 }

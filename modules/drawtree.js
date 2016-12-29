@@ -53,7 +53,7 @@ function drawCube(stage, obj) {
     
     stage.addChild(graphics);
 
-    debug.textContent++;
+    // debug.textContent++;
 
     return graphics;
 }
