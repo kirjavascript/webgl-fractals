@@ -1,0 +1,43 @@
+{
+  "name": "noobpack",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --env.dev",
+    "watch": "webpack --env.dev -w",
+    "start": "webpack-dev-server --env.devServer --env.dev",
+    "esLint": "webpack --env.esLint"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "autoprefixer": "^6.5.3",
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^7.1.0",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babili": "^0.0.8",
+    "babili-webpack-plugin": "^0.0.7",
+    "chroma-js": "^1.2.1",
+    "css-loader": "^0.25.0",
+    "d3": "^4.4.0",
+    "d3-scale": "^1.0.4",
+    "eslint": "^3.9.1",
+    "eslint-loader": "^1.6.1",
+    "extract-text-webpack-plugin": "2.0.0-beta.4",
+    "google-closure-compiler-js": "^20161024.0.0",
+    "import-glob-loader": "^1.1.0",
+    "node-sass": "^3.11.2",
+    "pixi.js": "^4.3.0",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "2.1.0-beta.25",
+    "webpack-dashboard": "^0.2.0",
+    "webpack-dev-server": "2.1.0-beta.10"
+  }
+}
