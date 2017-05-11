@@ -3,12 +3,16 @@ import { tree, octAngle, rAngle, cubeSize } from './index';
 
 let globalScale = scaleLinear().domain([1,0]).range([0,2]);
 
-require('touches')()
-  .on('move', (e) => {
-      let tilt = ((e.pageX / window.innerWidth) -.5) * 4;
-      let scale = (e.pageY / window.innerHeight);
-      mutate(tilt, scale);
-  });
+document.body.addEventListener('mousemove', (e) => {
+    let tilt = ((e.pageX / window.innerWidth) -.5) * 4;
+    let scale = (e.pageY / window.innerHeight);
+    mutate(tilt, scale);
+});
+document.body.addEventListener('touchmove', (e) => {
+    let tilt = ((e.touches[0].pageX / window.innerWidth) -.5) * 4;
+    let scale = (e.touches[0].pageY / window.innerHeight);
+    mutate(tilt, scale);
+});
 
 function mutate(tiltDelta, scaleDelta) {
 
@@ -21,7 +25,7 @@ function mutate(tiltDelta, scaleDelta) {
         if (!node.children) return;
 
         let [left, right] = node.children;
-        
+
         {   // left
 
             let angle = (octAngle/3)*(3 + tiltDelta);
